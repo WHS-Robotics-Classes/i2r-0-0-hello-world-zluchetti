@@ -1,0 +1,26 @@
+int x = 1;
+
+void setup()
+{
+    
+    Serial.begin(9600);
+    pinMode(7, OUTPUT);
+    pinMode(8, OUTPUT);
+    pinMode(9, OUTPUT);
+    pinMode(10, OUTPUT);
+        while (x < 10) {
+      
+        Serial.print("Cycle no ");
+        Serial.println(x);
+       
+        // 
+        digitalWrite((x + 7), HIGH);
+        delay(2000);
+        x = x + 1;
+    }
+}
+
+void loop()
+{
+
+}
