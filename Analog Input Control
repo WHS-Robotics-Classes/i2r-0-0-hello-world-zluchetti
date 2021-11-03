@@ -1,0 +1,58 @@
+
+/*
+
+*/
+int x;
+
+
+void setup() {
+    Serial.begin(9600);
+    analogWrite(9,0);//blue
+    analogWrite(10,0);//green
+    analogWrite(11,0);//red
+}
+
+void loop() {
+  x=analogRead(A0);
+ Serial.println(x);
+ if(x<=146){//red
+   analogWrite(11,255);
+   analogWrite(10,0);
+   analogWrite(9,0);
+ }
+ if ((x>146) && (x<=292)){//orange
+   analogWrite(11,255);
+   analogWrite(10,10);
+   analogWrite(9,0);
+   
+ }
+if ((x>292) && (x<=438)){//yellow
+  analogWrite(11,255);
+  analogWrite(10,50);
+  analogWrite(9,0);
+}//green
+ if((x>438) && (x<=584)){//green
+   analogWrite(11,0);
+   analogWrite(10,255);
+   analogWrite(9,0);
+ 
+ }
+if((x>584) && (x<=730)){//blue
+  analogWrite(11,0);
+  analogWrite(10,0);
+  analogWrite(9,255);
+
+}
+if ((x>730) && (x<=876)){//indigo
+  analogWrite(11,75);
+  analogWrite(10,0);
+  analogWrite(9,130);
+}  
+if ((x>876) && (x<=1022)){//violet
+  analogWrite(11,255);
+  analogWrite(10,0);
+  analogWrite(9,255);
+}
+}
+
+
